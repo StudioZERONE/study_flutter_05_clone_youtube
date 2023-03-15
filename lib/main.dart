@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:study_flutter_05_clone_youtube/binding/init_binding.dart';
 import 'package:study_flutter_05_clone_youtube/src/app.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      initialBinding: InitBinding(),
       initialRoute: "/",
       getPages: [
         GetPage(name: "/", page: () => const App()),
