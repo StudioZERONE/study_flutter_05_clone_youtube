@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:study_flutter_05_clone_youtube/src/controller/app_controller.dart';
 import 'package:study_flutter_05_clone_youtube/src/pages/explore.dart';
 import 'package:study_flutter_05_clone_youtube/src/pages/home.dart';
+import 'package:study_flutter_05_clone_youtube/src/pages/library.dart';
+import 'package:study_flutter_05_clone_youtube/src/pages/subscribe.dart';
 
 class App extends GetView<AppController> {
   const App({super.key});
@@ -12,11 +14,20 @@ class App extends GetView<AppController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Obx(() {
-        if (controller.currentIndex.value == 0) {
-          return const Home();
-        } else {
-          return const Explore();
+        switch (RouteName.values[controller.currentIndex.value]) {
+          case RouteName.Home:
+            return const Home();
+          case RouteName.Explore:
+            return const Explore();
+          case RouteName.Add:
+            // Bottom Sheet
+            break;
+          case RouteName.Subscribe:
+            return const Subscribe();
+          case RouteName.Library:
+            return const Library();
         }
+        return Container();
       }),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
