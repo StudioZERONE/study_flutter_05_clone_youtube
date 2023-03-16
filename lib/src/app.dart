@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:study_flutter_05_clone_youtube/controller/app_controller.dart';
+import 'package:study_flutter_05_clone_youtube/src/controller/app_controller.dart';
+import 'package:study_flutter_05_clone_youtube/src/pages/explore.dart';
+import 'package:study_flutter_05_clone_youtube/src/pages/home.dart';
 
 class App extends GetView<AppController> {
   const App({super.key});
@@ -9,9 +11,13 @@ class App extends GetView<AppController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("App.dart"),
-      ),
+      body: Obx(() {
+        if (controller.currentIndex.value == 0) {
+          return const Home();
+        } else {
+          return const Explore();
+        }
+      }),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
