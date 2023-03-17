@@ -15,16 +15,16 @@ class App extends GetView<AppController> {
     return Scaffold(
       body: Obx(() {
         switch (RouteName.values[controller.currentIndex.value]) {
-          case RouteName.Home:
+          case RouteName.home:
             return const Home();
-          case RouteName.Explore:
+          case RouteName.explore:
             return const Explore();
-          case RouteName.Add:
+          case RouteName.add:
             // Bottom Sheet
             break;
-          case RouteName.Subscribe:
+          case RouteName.subscribe:
             return const Subscribe();
-          case RouteName.Library:
+          case RouteName.library:
             return const Library();
         }
         return Container();

@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:study_flutter_05_clone_youtube/src/components/youtube_bottom_sheet.dart';
 
+// 하단 메뉴의 index와 이 enum의 index가 같아서, index는 생략 가능
 enum RouteName {
-  Home,
-  Explore,
-  Add,
-  Subscribe,
-  Library,
+  home,
+  explore,
+  add,
+  subscribe,
+  library,
 }
 
 class AppController extends GetxService {
@@ -15,7 +15,7 @@ class AppController extends GetxService {
   RxInt currentIndex = 0.obs;
 
   void changePageIndex(int index) {
-    if (RouteName.values[index] == RouteName.Add) {
+    if (RouteName.values[index] == RouteName.add) {
       _showBottomSheet();
     } else {
       currentIndex(index);
