@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:study_flutter_05_clone_youtube/src/components/custom_appbar.dart';
+import 'package:study_flutter_05_clone_youtube/src/components/video_widget.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -22,6 +23,7 @@ class Home extends StatelessWidget {
                 child: Container(
                   height: 150,
                   color: Colors.grey,
+                  child: const VideoWidget(),
                 ),
               ),
               childCount: 10,
