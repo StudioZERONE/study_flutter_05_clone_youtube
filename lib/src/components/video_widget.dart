@@ -67,6 +67,7 @@ class VideoWidget extends StatelessWidget {
                       color: Colors.black.withOpacity(0.6),
                     ),
                   ),
+                  const Text(" / "),
                   Text(
                     "2023-03-21",
                     style: TextStyle(
