@@ -179,3 +179,13 @@ class YoutubeDetail extends StatelessWidget {
     // );
   }
 }
+
+// 내 Google API Key: .... 아.. 이건 여기다 쓰면 안 되지..
+// 아무튼 API Key를 받았고
+// YouTube Data API v3 으로 쿼리 날려봤음. Postman 이용
+// 데이터 잘 나옴
+// 만든 API URL은..
+// Search Channel
+// Search Video
+// Search Video Info
+// 이걸로 코드에 적용하면 화면 연결 될 듯..
