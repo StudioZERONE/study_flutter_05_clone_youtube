@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:study_flutter_05_clone_youtube/src/components/custom_appbar.dart';
 import 'package:study_flutter_05_clone_youtube/src/components/video_widget.dart';
+import 'package:study_flutter_05_clone_youtube/src/controller/home_controller.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  Home({super.key});
+
+  final HomeController controller = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
