@@ -5,7 +5,13 @@ import 'package:study_flutter_05_clone_youtube/src/repository/youtube_repository
 class HomeController extends GetxController {
   static HomeController get to => Get.find();
 
-  Rx<YoutubeVideoResult> youtubeResult = YoutubeVideoResult().obs;
+  Rx<YoutubeVideoResult> youtubeResult = YoutubeVideoResult(
+          // totalResults: 0,
+          // resultsPerPage: 0,
+          // nextPagetoken: "",
+          // items: ,
+          )
+      .obs;
 
   @override
   void onInit() {

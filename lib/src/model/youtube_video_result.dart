@@ -7,6 +7,10 @@ class YoutubeVideoResult {
   List<Video> items;
 
   YoutubeVideoResult({
+    // this.totalResults = 0,
+    // this.resultsPerPage = 0,
+    // this.nextPagetoken = "",
+    // this.items = {,},
     required this.totalResults,
     required this.resultsPerPage,
     required this.nextPagetoken,

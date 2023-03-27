@@ -12,36 +12,42 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: CustomScrollView(
-        slivers: [
-          const SliverAppBar(
-            title: CustomAppBar(),
-            floating: true,
-            snap: true,
-            backgroundColor: Colors.white,
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                return GestureDetector(
-                  onTap: () {
-                    Get.toNamed("/detail/239587");
-                  },
-                  child: const VideoWidget(),
-                );
-              },
-              //  => Padding(
-              //   padding: const EdgeInsets.all(8.0),
-              //   child: Container(
-              //     height: 150,
-              //     color: Colors.grey,
-              //     child: const VideoWidget(),
-              //   ),
-              // ),
-              childCount: 3,
+      child: Obx(
+        () => CustomScrollView(
+          slivers: [
+            const SliverAppBar(
+              title: CustomAppBar(),
+              floating: true,
+              snap: true,
+              backgroundColor: Colors.white,
             ),
-          ),
-        ],
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Get.toNamed("/detail/239587");
+                    },
+                    child: VideoWidget(
+                      video: controller.youtubeResult.value.items[index],
+                    ),
+                  );
+                },
+                //  => Padding(
+                //   padding: const EdgeInsets.all(8.0),
+                //   child: Container(
+                //     height: 150,
+                //     color: Colors.grey,
+                //     child: const VideoWidget(),
+                //   ),
+                // ),
+                childCount: controller.youtubeResult.value.items == null
+                    ? 0
+                    : controller.youtubeResult.value.items.length,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

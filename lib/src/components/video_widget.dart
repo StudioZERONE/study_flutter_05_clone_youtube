@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:study_flutter_05_clone_youtube/src/model/video.dart';
 
 class VideoWidget extends StatelessWidget {
-  const VideoWidget({super.key});
+  final Video video;
+  const VideoWidget({super.key, required this.video});
 
   Widget _thumbnail() {
     return Container(
       height: 250,
       color: Colors.grey.withOpacity(0.5),
+      child: Image.network(
+        video.snippet.thumbnails.medium.url,
+        fit: BoxFit.fitWidth,
+      ),
     );
   }
 
@@ -34,9 +41,9 @@ class VideoWidget extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Expanded(
+                  Expanded(
                     child: Text(
-                      "개남 유튜브 다시보기 개남 유튜브 다시보기 개남 유튜브 다시보기 개남 유튜브 다시보기 개남 유튜브 다시보기 ",
+                      video.snippet.title,
                       maxLines: 2,
                     ),
                   ),
@@ -53,7 +60,7 @@ class VideoWidget extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "개발하는 남자",
+                    video.snippet.channelTitle,
                     style: TextStyle(
                       fontSize: 12,
                       color: Colors.black.withOpacity(0.8),
@@ -69,7 +76,7 @@ class VideoWidget extends StatelessWidget {
                   ),
                   const Text(" / "),
                   Text(
-                    "2023-03-21",
+                    DateFormat("yyyy-MM-dd").format(video.snippet.publishTime),
                     style: TextStyle(
                       fontSize: 12,
                       color: Colors.black.withOpacity(0.6),
