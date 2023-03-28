@@ -7,21 +7,22 @@ class YoutubeVideoResult {
   List<Video> items;
 
   YoutubeVideoResult({
-    // this.totalResults = 0,
-    // this.resultsPerPage = 0,
-    // this.nextPagetoken = "",
-    // this.items = {,},
-    required this.totalResults,
-    required this.resultsPerPage,
-    required this.nextPagetoken,
-    required this.items,
+    this.totalResults,
+    this.resultsPerPage,
+    this.nextPagetoken,
+    this.items,
+    // required this.totalResults,
+    // required this.resultsPerPage,
+    // required this.nextPagetoken,
+    // required this.items,
   });
 
   factory YoutubeVideoResult.fromJson(Map<String, dynamic> json) =>
       YoutubeVideoResult(
-          totalResults: json["pageInfo"]["totlaResults"],
-          resultsPerPage: json["pageInfo"]["resultsPerPage"],
-          nextPagetoken: json["nextPagetoken"] ?? "",
-          items: List<Video>.from(
-              json["items"].map((data) => Video.fromJson(data))));
+        totalResults: json["pageInfo"]["totlaResults"],
+        resultsPerPage: json["pageInfo"]["resultsPerPage"],
+        nextPagetoken: json["nextPagetoken"] ?? "",
+        items:
+            List<Video>.from(json["items"].map((data) => Video.fromJson(data))),
+      );
 }

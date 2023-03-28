@@ -9,7 +9,7 @@ class HomeController extends GetxController {
           // totalResults: 0,
           // resultsPerPage: 0,
           // nextPagetoken: "",
-          // items: ,
+          // items: [],
           )
       .obs;
 
@@ -22,7 +22,7 @@ class HomeController extends GetxController {
   void _videoLoad() async {
     YoutubeVideoResult youtubeVideoResult =
         await YoutubeRepository.to.loadVideos();
-    //print(youtubeVideoResult.items.length);
+    // print(youtubeVideoResult.items.length);
     if (youtubeVideoResult.items.isNotEmpty) {
       youtubeResult(youtubeVideoResult);
     }
