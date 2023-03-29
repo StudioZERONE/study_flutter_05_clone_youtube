@@ -17,12 +17,12 @@ class YoutubeRepository extends GetConnect {
     if (response.status.hasError) {
       return Future.error(response.statusText.toString());
     } else {
+      print(response.body["items"]);
       if (response.body["items"] != null && response.body["items"].length > 0) {
         return YoutubeVideoResult.fromJson(response.body);
       } else {
         return response.body; // 이건 그냥 잠깐 내가 넣은거...
       }
-      //print(response.body["items"]);
     }
   }
 }
