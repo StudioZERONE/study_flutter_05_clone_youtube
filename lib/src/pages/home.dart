@@ -41,9 +41,7 @@ class Home extends StatelessWidget {
                 //     child: const VideoWidget(),
                 //   ),
                 // ),
-                childCount: controller.youtubeResult.value.items == null
-                    ? 0
-                    : controller.youtubeResult.value.items.length,
+                childCount: controller.youtubeResult.value.items.length,
               ),
             ),
           ],

@@ -17,7 +17,9 @@ class YoutubeRepository extends GetConnect {
     if (response.status.hasError) {
       return Future.error(response.statusText.toString());
     } else {
+      print("---------- youtube_repository.dart ----------");
       print(response.body["items"]);
+      print("---------- youtube_repository.dart ----------");
       if (response.body["items"] != null && response.body["items"].length > 0) {
         return YoutubeVideoResult.fromJson(response.body);
       } else {

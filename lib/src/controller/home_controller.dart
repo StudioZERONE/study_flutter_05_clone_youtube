@@ -6,12 +6,11 @@ class HomeController extends GetxController {
   static HomeController get to => Get.find();
 
   Rx<YoutubeVideoResult> youtubeResult = YoutubeVideoResult(
-          // totalResults: 0,
-          // resultsPerPage: 0,
-          // nextPagetoken: "",
-          // items: [],
-          )
-      .obs;
+    totalResults: 0,
+    resultsPerPage: 0,
+    nextPagetoken: "",
+    items: [],
+  ).obs;
 
   @override
   void onInit() {
